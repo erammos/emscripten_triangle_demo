@@ -26,9 +26,12 @@ jobs:
       # See https://cmake.org/cmake/help/latest/variable/CMAKE_BUILD_TYPE.html?highlight=cmake_build_type
       run: emcmake cmake -B ${{github.workspace}}/build
 
+
     - name: Build
       # Build your program with the given configuration
-      run: make ${{github.workspace}}/build
+      run: cd ${{github.workspace}}/build \
+           ls
+           make
 
    # - name: Test
     #  working-directory: ${{github.workspace}}/build
