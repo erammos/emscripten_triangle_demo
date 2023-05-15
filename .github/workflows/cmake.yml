@@ -40,8 +40,7 @@ jobs:
     # Path of the directory containing the static assets.
         path:  ${{github.workspace}}/build/bin/ 
     - name: Deploy to GitHub Pages
-      id: deployment
-      uses: actions/deploy-pages@v2
+      uses: actions/deploy-pages@v2.0.1
       
     # default is _site/
     # Duration after which artifact will expire in days.
