@@ -50,9 +50,8 @@ int main(int argc, char **argv) {
     exit(1);
   }
 #ifdef __EMSCRIPTEN__
-  emscripten_set_main_loop(loop , 0, true);
+  emscripten_set_main_loop(loop, 0, true);
 #else
-while(true)
-    loop();
+  while (true) loop();
 #endif
 }
