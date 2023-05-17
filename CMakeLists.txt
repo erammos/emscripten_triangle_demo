@@ -17,7 +17,7 @@ else()
     # 1. Look for a SDL2 package, 2. Look for the SDL2maincomponent and 3. DO NOT fail when SDL2main is not available
     find_package(SDL2 REQUIRED CONFIG COMPONENTS SDL2main)
 endif()
-add_executable(${PROJECT_NAME} src/main.cc)
+add_executable(${PROJECT_NAME} src/main.cc vendored/glad/src/glad.c)
 if(TARGET SDL2::SDL2main)
     # It has an implicit dependency on SDL2 functions, so it MUST be added before SDL2::SDL2 (or SDL2::SDL2-static)
     target_link_libraries(${PROJECT_NAME} PRIVATE SDL2::SDL2main)
@@ -40,6 +40,7 @@ target_include_directories(
     ${PROJECT_NAME}
     PUBLIC
     $<BUILD_INTERFACE:${CMAKE_CURRENT_SOURCE_DIR}/include>
+    $<BUILD_INTERFACE:${CMAKE_CURRENT_SOURCE_DIR}/vendored/glad/include>
     PRIVATE
     ${CMAKE_CURRENT_SOURCE_DIR}/src
   )
