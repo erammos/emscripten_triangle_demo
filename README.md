@@ -1,2 +1,2 @@
 # Emscripten Demo
-[Triangle](https://erammos.github.io/fluffy_octo_robot/)
+[Triangle](https://erammos.github.io/emscripten_triangle_demo/)
